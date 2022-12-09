@@ -1,0 +1,50 @@
+version: "2"
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    volumes:
+      - ./code:/var/www
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8080:80"
+  app:
+    ## read php image from our custom docker image ##
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    volumes:
+      ## copy project files to /var/www ##
+      - ./code:/var/www
+      - ./docker/php/php/php.ini:/usr/local/etc/php/php.ini
+    ports:
+      - "8081:9001"
+    working_dir: /var/www
+
+  db:
+    image: mysql:5.7
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./docker-volumes-data/db:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: project_database
+      MYSQL_ROOT_PASSWORD: root
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - "3308:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_DATABASE: project_database
+      PMA_PORT: 3306
+      UPLOAD_LIMIT: 1000000K
+      MAX_EXECUTION_TIME: 3600
+  redis:
+    image: redis
+    volumes:
+      - ./docker-volumes-data/redis:/data
+    ports:
+      - "6380:6379"

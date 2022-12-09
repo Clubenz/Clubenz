@@ -1,0 +1,9 @@
+1) installation
+
+A) Docker
+B) Docker compose
+C) docker-sync [http://docker-sync.io/]
+
+2) Run
+- open terminal in project root
+- use following command `docker-sync-stack start` || `docker-compose -f docker-compose.yml -f docker-compose-dev.yml up`

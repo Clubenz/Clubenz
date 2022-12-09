@@ -1,0 +1,5917 @@
+{
+	"info": {
+		"_postman_id": "a493d653-5bf3-4cfc-9e70-82d1c8df1b5e",
+		"name": "Clubenz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Profile",
+					"item": [
+						{
+							"name": "Update Email",
+							"item": [
+								{
+									"name": "1) Request Update email",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{$access_token}}"
+											},
+											{
+												"key": "Accept-Language",
+												"value": "ar",
+												"description": "en -ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "mark@intcore.net",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/profile/email/request",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"profile",
+												"email",
+												"request"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2) Verify & Update email",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer   {{$access_token}}"
+											},
+											{
+												"key": "Accept-Language",
+												"value": "ar",
+												"description": "en -ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "mark@intcore.net",
+													"type": "text"
+												},
+												{
+													"key": "temp_code",
+													"value": "123456",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/profile/email/verify",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"profile",
+												"email",
+												"verify"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Update Phone",
+							"item": [
+								{
+									"name": "1) Request Update phone",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{$access_token}}"
+											},
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"description": "en -ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone",
+													"value": "20-1118240000",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/profile/phone/request",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"profile",
+												"phone",
+												"request"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2) Verify & Update phone",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer   {{$access_token}}"
+											},
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"description": "en -ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone",
+													"value": "20-11182400002",
+													"type": "text"
+												},
+												{
+													"key": "temp_code",
+													"value": "123456",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/profile/phone/verify",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"profile",
+												"phone",
+												"verify"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Notification",
+							"item": [
+								{
+									"name": "Get my notification",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{$access_token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/app/notifications",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"app",
+												"notifications"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "update notification as read",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{$access_token}} ",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/app/notifications",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"app",
+												"notifications"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "get profile",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer   {{$access_token}}"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "ar",
+										"description": "en -ar",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/profile",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer  {{$access_token}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "en -ar",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "password",
+											"value": "1231234",
+											"description": "optional incase update social media user which he have no password",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "1231234",
+											"type": "text"
+										},
+										{
+											"key": "old_password",
+											"value": "1231234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/profile/change-password",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"profile",
+										"change-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Profile",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer   {{$access_token}}"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "en -ar",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/profile?first_name=Mark&last_name=Rady&country_id=af9b2e7d-e585-4f4d-8bd2-353e89e5c754&city_id=81c063a1-7e28-4cc7-9d0b-9138ee969cca&area_id=feca2fbb-dea8-4255-ae12-d8134937e637&gender=1&birth_date=1996-09-25",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"profile"
+									],
+									"query": [
+										{
+											"key": "first_name",
+											"value": "Mark"
+										},
+										{
+											"key": "last_name",
+											"value": "Rady"
+										},
+										{
+											"key": "profile_picture",
+											"value": "/path/to/image.jpeg",
+											"disabled": true
+										},
+										{
+											"key": "country_id",
+											"value": "af9b2e7d-e585-4f4d-8bd2-353e89e5c754"
+										},
+										{
+											"key": "city_id",
+											"value": "81c063a1-7e28-4cc7-9d0b-9138ee969cca"
+										},
+										{
+											"key": "area_id",
+											"value": "feca2fbb-dea8-4255-ae12-d8134937e637"
+										},
+										{
+											"key": "gender",
+											"value": "1",
+											"description": "const MALE = 1;\nconst FEMALE = 2;"
+										},
+										{
+											"key": "birth_date",
+											"value": "1996-09-25"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Car info",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer   {{$access_token}}"
+									},
+									{
+										"description": "en -ar",
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "en"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/profile/car?car_class_id=1da2c71a-5da7-472e-8b70-3bc2f86a38d4&car_model_id=1&fuel_type_id=8c727b85-b8b0-41f1-a9fb-9de5bfb4c710&car_vin_prefix=12345&year=2016",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"profile",
+										"car"
+									],
+									"query": [
+										{
+											"key": "car_class_id",
+											"value": "1da2c71a-5da7-472e-8b70-3bc2f86a38d4"
+										},
+										{
+											"key": "car_model_id",
+											"value": "1"
+										},
+										{
+											"key": "fuel_type_id",
+											"value": "8c727b85-b8b0-41f1-a9fb-9de5bfb4c710"
+										},
+										{
+											"key": "car_vin_prefix",
+											"value": "12345"
+										},
+										{
+											"key": "year",
+											"value": "2016"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update device info [device token - language]",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer  {{$access_token}}"
+									},
+									{
+										"description": "en -ar",
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "en"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/profile/device-info?language=ar&device_id=123",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"profile",
+										"device-info"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "ar",
+											"description": "ar / en"
+										},
+										{
+											"key": "device_id",
+											"value": "123"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Forget password process",
+					"item": [
+						{
+							"name": "1 -Send  forget password email",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "en -ar",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "mark@intcore.net",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "20-1118240000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/auth/forget-password/password/request",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"auth",
+										"forget-password",
+										"password",
+										"request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2 - confirm user code ",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "en -ar",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "mark@intcore.net",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "20-1118240000",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "code",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/auth/forget-password/password/valdiate",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"auth",
+										"forget-password",
+										"password",
+										"valdiate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3 -reset password with sent code",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"description": "en -ar",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "mark@intcore.net",
+											"disabled": true
+										},
+										{
+											"key": "phone",
+											"value": "20-1118240000",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123123"
+										},
+										{
+											"key": "code",
+											"value": "123456"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/auth/forget-password/password/reset",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"auth",
+										"forget-password",
+										"password",
+										"reset"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login / Registration",
+					"item": [
+						{
+							"name": "Regular",
+							"item": [
+								{
+									"name": "Register",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"description": "en -ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "first_name",
+													"value": "Mark",
+													"type": "text"
+												},
+												{
+													"key": "last_name",
+													"value": "Rady",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "123123",
+													"type": "text"
+												},
+												{
+													"key": "phone",
+													"value": "20-1118240000",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "mark@intcore.net",
+													"type": "text"
+												},
+												{
+													"key": "profile_picture",
+													"value": "/storage/uploads/55hlT1munPVTboIiE4pAiIqTL3SzElDmYeyEZfBJ.jpg",
+													"type": "text"
+												},
+												{
+													"key": "device_name",
+													"value": "ios",
+													"description": "device name for example",
+													"type": "text"
+												},
+												{
+													"key": "device_id",
+													"value": "123",
+													"type": "text"
+												},
+												{
+													"key": "language",
+													"value": "en",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/auth/regular/register",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"auth",
+												"regular",
+												"register"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "success response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													},
+													{
+														"key": "Accept-Language",
+														"value": "en",
+														"description": "en -ar",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "first_name",
+															"value": "Mark",
+															"type": "text"
+														},
+														{
+															"key": "last_name",
+															"value": "Rady",
+															"type": "text"
+														},
+														{
+															"key": "password",
+															"value": "123123",
+															"type": "text"
+														},
+														{
+															"key": "phone",
+															"value": "20-11182400001",
+															"type": "text"
+														},
+														{
+															"key": "email",
+															"value": "mark@intcore.net1",
+															"type": "text"
+														},
+														{
+															"key": "profile_picture",
+															"value": "/storage/uploads/FZb3kp1MTrgG2aD8jl7bFNBXDLpILEYgWOKVdaDq.jpg",
+															"type": "text"
+														},
+														{
+															"key": "device_name",
+															"value": "ios",
+															"description": "device name for example",
+															"type": "text"
+														},
+														{
+															"key": "device_id",
+															"value": "123",
+															"type": "text"
+														},
+														{
+															"key": "language",
+															"value": "en",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{$domain}}/api/v1/user/auth/regular/register",
+													"host": [
+														"{{$domain}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"auth",
+														"regular",
+														"register"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Server",
+													"value": "nginx/1.19.4"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Thu, 03 Dec 2020 11:01:47 GMT"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "57"
+												},
+												{
+													"key": "phpdebugbar-id",
+													"value": "Xde4f7e91a9db5406e19101873ff49393"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": \"2ac95587-8c31-48d5-9b42-980350c8ac97\",\n        \"first_name\": \"Mark\",\n        \"last_name\": \"Rady\",\n        \"phone\": \"20-11182400001\",\n        \"email\": \"mark@intcore.net1\",\n        \"social_type\": null,\n        \"social_id\": null,\n        \"type\": 1,\n        \"has_password\": true,\n        \"activation_status\": 2,\n        \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYzg2OTU2YzBmNjEwYWI0MzUyNDQ3NWZjNmE0YjYwYzllZjBkMWE4ODNkZmEzYWRlM2M2NjE2M2E1MDdlNzExNmZmMTI5MDEwODE1MTk3MGQiLCJpYXQiOjE2MDY5OTMzMDYsIm5iZiI6MTYwNjk5MzMwNiwiZXhwIjoxNjM4NTI5MzA2LCJzdWIiOiIyYWM5NTU4Ny04YzMxLTQ4ZDUtOWI0Mi05ODAzNTBjOGFjOTciLCJzY29wZXMiOltdfQ.oIdPhnxvF_lWXawFT_0HTWeB8Pry_eRa8otl54VFCXYWgY_9lNryy_2uzBN96TyZdChFXV6DWkfL8973tgO9MJuw9R3Nq98qwNPHWYIats1SdOwOflUeDOw5oXlR4R6VN7xXP_iYFVJLezaP0oL3tugpKDbd8kfrYQecllXIffGqvCMUhPmnGeCiW_Hn8p9rRH0l1WrKGVIEU7c0NzBQxLoOGoSSnstyhPp23G1Zbuw6omc9l_NiT9harWnWYyXb-7sAoH__5XlZgn1Xr3z51THBcEwGuPaJaHmQwNbdkb4U6hQlirwQGnbQw2eM1Esb3XjrtW5ZSePoVKddxJ7eM0Z01az75tzSwbMbqQ1b5ne-tHeDd2GUCg6vGhoo-_MJeu06fnXGyqeY7UIX0cn0BcXYdYs7rsNdwt3mqZUlV4jAzVpzjqOFAKbFOcouFEAMvU__b88HiWVmYVanDnop0ziTTT6K8DQO8jkeP3k7g6MW0hahs7lNPG7dCAKsCB7WjwFamZrNp8bIlT0A14IMgAB8FwWAqc9DnXhUyWEVb_KnWTegiC9PSPnyVrsGZbqZwjVgaKnLGIaAfe99SiYyKT0myQL_q8LtclU7lAIBzDPPmSG7w5cTgZjZJeod6R9HcgXMAc319-4xbIT0CsD57lgxY4ubIXKZT9BK90-TRQU\",\n        \"profile_picture\": {\n            \"id\": 3,\n            \"path\": \"http://localhost:8080/storage/3/FZb3kp1MTrgG2aD8jl7bFNBXDLpILEYgWOKVdaDq.jpg\",\n            \"path_thumbnail\": \"http://localhost:8080/storage/3/conversions/FZb3kp1MTrgG2aD8jl7bFNBXDLpILEYgWOKVdaDq-thumb.jpg\",\n            \"mime_type\": \"image/jpeg\",\n            \"custom_properties\": []\n        }\n    }\n}"
+										},
+										{
+											"name": "Validation Error ",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													},
+													{
+														"key": "Accept-Language",
+														"value": "en",
+														"description": "en -ar",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "first_name",
+															"value": "Mark",
+															"type": "text"
+														},
+														{
+															"key": "last_name",
+															"value": "Rady",
+															"type": "text"
+														},
+														{
+															"key": "password",
+															"value": "123123",
+															"type": "text"
+														},
+														{
+															"key": "phone",
+															"value": "20-11182400001",
+															"type": "text"
+														},
+														{
+															"key": "email",
+															"value": "mark@intcore.net1",
+															"type": "text"
+														},
+														{
+															"key": "profile_picture",
+															"value": "/storage/uploads/FZb3kp1MTrgG2aD8jl7bFNBXDLpILEYgWOKVdaDq.jpg",
+															"type": "text"
+														},
+														{
+															"key": "device_name",
+															"value": "ios",
+															"description": "device name for example",
+															"type": "text"
+														},
+														{
+															"key": "device_id",
+															"value": "123",
+															"type": "text"
+														},
+														{
+															"key": "language",
+															"value": "en",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{$domain}}/api/v1/user/auth/regular/register",
+													"host": [
+														"{{$domain}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"auth",
+														"regular",
+														"register"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Server",
+													"value": "nginx/1.19.4"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Thu, 03 Dec 2020 11:07:57 GMT"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "phpdebugbar-id",
+													"value": "Xe6ec2b14604e5f9215821f4390e4b243"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"name\": \"phone\",\n            \"message\": \"The phone has already been taken.\"\n        },\n        {\n            \"name\": \"email\",\n            \"message\": \"The email has already been taken.\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Login",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"description": "en -ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "phone",
+													"value": "20-1118240000",
+													"description": "phone should be prefixed with country code"
+												},
+												{
+													"key": "email",
+													"value": "mark@intcore.net",
+													"description": "sending email in case login via email instead of phone",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "123123",
+													"type": "text"
+												},
+												{
+													"key": "device_name",
+													"value": "ios",
+													"type": "text"
+												},
+												{
+													"key": "device_id",
+													"value": "123",
+													"type": "text"
+												},
+												{
+													"key": "language",
+													"value": "en",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/auth/regular/login",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"auth",
+												"regular",
+												"login"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "invalid credentials",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													},
+													{
+														"key": "Accept-Language",
+														"value": "en",
+														"description": "en -ar",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "phone",
+															"value": "20-111824000011",
+															"description": "phone should be prefixed with country code"
+														},
+														{
+															"key": "email",
+															"value": "mark@intcore.net",
+															"description": "sending email in case login via email instead of phone",
+															"type": "text",
+															"disabled": true
+														},
+														{
+															"key": "password",
+															"value": "123123",
+															"type": "text"
+														},
+														{
+															"key": "device_name",
+															"value": "hello egypt",
+															"type": "text"
+														},
+														{
+															"key": "device_id",
+															"value": "123",
+															"type": "text"
+														},
+														{
+															"key": "language",
+															"value": "en",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{$domain}}/api/v1/user/auth/regular/login",
+													"host": [
+														"{{$domain}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"auth",
+														"regular",
+														"login"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Server",
+													"value": "nginx/1.19.4"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Thu, 03 Dec 2020 11:21:03 GMT"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "58"
+												},
+												{
+													"key": "phpdebugbar-id",
+													"value": "X76e998fed43760d5cec54b5f65231593"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"name\": \"password\",\n            \"message\": \"Invalid credentials\"\n        }\n    ]\n}"
+										},
+										{
+											"name": "validation error ",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													},
+													{
+														"key": "Accept-Language",
+														"value": "en",
+														"description": "en -ar",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "phone",
+															"value": "20-111824000011",
+															"description": "phone should be prefixed with country code",
+															"disabled": true
+														},
+														{
+															"key": "email",
+															"value": "mark@intcore.net",
+															"description": "sending email in case login via email instead of phone",
+															"type": "text",
+															"disabled": true
+														},
+														{
+															"key": "password",
+															"value": "123123",
+															"type": "text",
+															"disabled": true
+														},
+														{
+															"key": "device_name",
+															"value": "hello egypt",
+															"type": "text",
+															"disabled": true
+														},
+														{
+															"key": "device_id",
+															"value": "123",
+															"type": "text",
+															"disabled": true
+														},
+														{
+															"key": "language",
+															"value": "en",
+															"type": "text",
+															"disabled": true
+														}
+													]
+												},
+												"url": {
+													"raw": "{{$domain}}/api/v1/user/auth/regular/login",
+													"host": [
+														"{{$domain}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"auth",
+														"regular",
+														"login"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Server",
+													"value": "nginx/1.19.4"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Thu, 03 Dec 2020 11:23:10 GMT"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "phpdebugbar-id",
+													"value": "X1e135cd0c3a2db4919a2bb197f786586"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"name\": \"email\",\n            \"message\": \"The email field is required when phone is not present.\"\n        },\n        {\n            \"name\": \"phone\",\n            \"message\": \"The phone field is required when email is not present.\"\n        },\n        {\n            \"name\": \"password\",\n            \"message\": \"The password field is required.\"\n        }\n    ]\n}"
+										},
+										{
+											"name": "success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													},
+													{
+														"key": "Accept-Language",
+														"value": "en",
+														"description": "en -ar",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "phone",
+															"value": "20-1118240000",
+															"description": "phone should be prefixed with country code"
+														},
+														{
+															"key": "email",
+															"value": "mark@intcore.net",
+															"description": "sending email in case login via email instead of phone",
+															"type": "text",
+															"disabled": true
+														},
+														{
+															"key": "password",
+															"value": "123123",
+															"type": "text"
+														},
+														{
+															"key": "device_name",
+															"value": "hello egypt",
+															"type": "text"
+														},
+														{
+															"key": "device_id",
+															"value": "123",
+															"type": "text"
+														},
+														{
+															"key": "language",
+															"value": "en",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{$domain}}/api/v1/user/auth/regular/login",
+													"host": [
+														"{{$domain}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"auth",
+														"regular",
+														"login"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Server",
+													"value": "nginx/1.19.4"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Thu, 03 Dec 2020 11:09:51 GMT"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "phpdebugbar-id",
+													"value": "X5f8fe2e110127e288b83af132570e8fe"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"id\": \"bba86fb9-d686-4f13-8aac-f5486365792f\",\n        \"first_name\": \"Mark\",\n        \"last_name\": \"Rady\",\n        \"phone\": \"20-1118240000\",\n        \"email\": \"mark@intcore.net\",\n        \"social_type\": null,\n        \"social_id\": null,\n        \"type\": 1,\n        \"has_password\": true,\n        \"activation_status\": 2,\n        \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjdjYmRhNzg4OTk4NzIzZjEzZmE3ZjZiOWJhYjNhZGFmMGM0MWY0NzFiOTczZTQ1ZTA4YWM0YjI4NzJiODRhOWNlOThkODVmMGI1YTNkZmQiLCJpYXQiOjE2MDY5OTM3OTEsIm5iZiI6MTYwNjk5Mzc5MSwiZXhwIjoxNjM4NTI5NzkxLCJzdWIiOiJiYmE4NmZiOS1kNjg2LTRmMTMtOGFhYy1mNTQ4NjM2NTc5MmYiLCJzY29wZXMiOltdfQ.Xk7SC_osvrqIXcD0t3U1PtsjusJqLTKjKw1J8i43P4HeY1GHCBMzBoVX8sRUH3KbyEDSgzoPp-ZoCX-IRqgz0W7tDALQGeDUCwQxak1f-l6sAs8e-JPSfNNyBCM0XqzIo-umnr43N10uK_hJ0Mu_s7EfSqJFCvZQVXZL6ZrGX4iN_VSYyVndOe0Zo1ZoBIz5VciPTjxnHEEBKkUfUGJNTol4pDmvtp9nIXoqMOy6M_VVc9CYjAQBS7PkgOrk6CdOfmT9MCtJviBUBCVQA7oLkzqH0P28KkJTxQtHWaLTu3e_5jNYEKmDc8sNwKC4_xxj7oV6OQF9nBA0cFPm9Vyak94WsWzTp1HDDphmKrOup_OUoTNfN_D9pH9AeHhCWSXnZC4WOJPHt-rXq8zdYy14GXrhIr0DOHZ5FZpTy5exfSFmiBpWLusXgMl5KXCxKOLZ9WFdjaG-Ns6Yk7f4hGuaT1eVLnoBQWjxTOS5sF7TpEOv7DinFN--xNrsKg3RnVZPBdeGykTx3nIkP36DELgE-olgM4Jhr_ApF1HFSY7KQXnfd-ZaWGkNfe7q93a22UYWWDiXvADrka5oZBsU_fgcx29iinTg34t0Pq5toVU_A5OR41-mIBnpRsQsJ8bU5eIq5umFxPNIdzl4c6JNBM_zZ535_nfG3-hOLK5tzRbSpMM\",\n        \"profile_picture\": {\n            \"id\": 2,\n            \"path\": \"http://localhost:8080/storage/2/3FaghSHahrJwKjqgoDeeaZVFKTUPAbNbydm9yczY.jpg\",\n            \"path_thumbnail\": \"http://localhost:8080/storage/2/conversions/3FaghSHahrJwKjqgoDeeaZVFKTUPAbNbydm9yczY-thumb.jpg\",\n            \"mime_type\": \"image/jpeg\",\n            \"custom_properties\": []\n        }\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Check If User is already registerd",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"description": "en -ar",
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "phone",
+													"value": "20-1118240000",
+													"description": "phone should be prefixed with country code",
+													"disabled": true
+												},
+												{
+													"key": "email",
+													"value": "mark@intcore.net",
+													"description": "sending email in case login via email instead of phone",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/auth/regular/check-user",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"auth",
+												"regular",
+												"check-user"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Validation Error",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"type": "text",
+														"value": "application/json"
+													},
+													{
+														"description": "en -ar",
+														"key": "Accept-Language",
+														"type": "text",
+														"value": "en"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "phone",
+															"value": "20-1118240000",
+															"description": "phone should be prefixed with country code",
+															"disabled": true
+														},
+														{
+															"key": "email",
+															"value": "mark@intcore.net",
+															"description": "sending email in case login via email instead of phone",
+															"type": "text",
+															"disabled": true
+														}
+													]
+												},
+												"url": {
+													"raw": "{{$domain}}/api/v1/user/auth/regular/check-user",
+													"host": [
+														"{{$domain}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"auth",
+														"regular",
+														"check-user"
+													]
+												}
+											},
+											"status": "Unprocessable Entity",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Server",
+													"value": "nginx/1.19.4"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 02 Dec 2020 20:14:58 GMT"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "phpdebugbar-id",
+													"value": "X1001cb1c57780c96a3003351ebbda637"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"errors\": [\n        {\n            \"name\": \"email\",\n            \"message\": \"The email field is required when phone is not present.\"\n        },\n        {\n            \"name\": \"phone\",\n            \"message\": \"The phone field is required when email is not present.\"\n        }\n    ]\n}"
+										},
+										{
+											"name": "user doesnt exist",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"type": "text",
+														"value": "application/json"
+													},
+													{
+														"description": "en -ar",
+														"key": "Accept-Language",
+														"type": "text",
+														"value": "en"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "phone",
+															"value": "20-11182400001",
+															"description": "phone should be prefixed with country code"
+														},
+														{
+															"key": "email",
+															"value": "mark@intcore.net",
+															"description": "sending email in case login via email instead of phone",
+															"type": "text",
+															"disabled": true
+														}
+													]
+												},
+												"url": {
+													"raw": "{{$domain}}/api/v1/user/auth/regular/check-user",
+													"host": [
+														"{{$domain}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"auth",
+														"regular",
+														"check-user"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Server",
+													"value": "nginx/1.19.4"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 02 Dec 2020 20:15:18 GMT"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "58"
+												},
+												{
+													"key": "phpdebugbar-id",
+													"value": "Xc6ec5825fda062fcc96765ea5d0eb652"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"is_exist\": false\n    }\n}"
+										},
+										{
+											"name": "user is already exist",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"type": "text",
+														"value": "application/json"
+													},
+													{
+														"description": "en -ar",
+														"key": "Accept-Language",
+														"type": "text",
+														"value": "en"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "phone",
+															"value": "20-1118240000",
+															"description": "phone should be prefixed with country code"
+														},
+														{
+															"key": "email",
+															"value": "mark@intcore.net",
+															"description": "sending email in case login via email instead of phone",
+															"type": "text",
+															"disabled": true
+														}
+													]
+												},
+												"url": {
+													"raw": "{{$domain}}/api/v1/user/auth/regular/check-user",
+													"host": [
+														"{{$domain}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"auth",
+														"regular",
+														"check-user"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Server",
+													"value": "nginx/1.19.4"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 02 Dec 2020 20:15:32 GMT"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "57"
+												},
+												{
+													"key": "phpdebugbar-id",
+													"value": "Xbc719b89d564fd77404bef85602d3b20"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"is_exist\": true\n    }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Social media",
+							"item": [
+								{
+									"name": "Register with social media",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"description": "en -ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "social_id",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "social_type",
+													"value": "facebook",
+													"description": "TYPES \nfacebook\ngoogle\ntwitter\ninstagram",
+													"type": "text"
+												},
+												{
+													"key": "first_name",
+													"value": "Mark ",
+													"type": "text"
+												},
+												{
+													"key": "last_name",
+													"value": "Rady",
+													"type": "text"
+												},
+												{
+													"key": "phone",
+													"value": "20-1118240000",
+													"description": "optional but email will required",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "mark@intcore.net",
+													"description": "optional but phone will required",
+													"type": "text"
+												},
+												{
+													"key": "image_id",
+													"value": "94d0517d-cba1-40ca-926f-21599267c0f1",
+													"description": "optional",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "device_name",
+													"value": "hello egypt",
+													"type": "text"
+												},
+												{
+													"key": "device_id",
+													"value": "123",
+													"type": "text"
+												},
+												{
+													"key": "language",
+													"value": "en",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/auth/social-media/register",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"auth",
+												"social-media",
+												"register"
+											]
+										},
+										"description": "phone and mail (only one required)\n(social_type - social_id) are both required\n"
+									},
+									"response": []
+								},
+								{
+									"name": "Login with social media",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"description": "en -ar",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "social_type",
+													"value": "facebook",
+													"type": "text"
+												},
+												{
+													"key": "social_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "device_name",
+													"value": "hello egypt",
+													"type": "text"
+												},
+												{
+													"key": "device_id",
+													"value": "123",
+													"type": "text"
+												},
+												{
+													"key": "language",
+													"value": "en",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/auth/social-media/login",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"auth",
+												"social-media",
+												"login"
+											]
+										},
+										"description": "sending 2 keys \nsocial_type\nsocial_id\nboth keys are required , if the user already registered with social media the user and his/hers access_token will sent back in response"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Activation",
+							"item": [
+								{
+									"name": "Activate user via OTP",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{$access_token}}"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "code",
+													"value": "123456",
+													"description": "default is 123456",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/auth/activate",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"auth",
+												"activate"
+											]
+										},
+										"description": "activation key changed to activation_status\nvalue == 0 (account is suspended)\nvalue == 1 (account is activated)\nvalue == 2 (account is pending activation)\nvalue == 3 (provider account need to complete profile )\nvalue == 4 (provider account need admin approval)\n"
+									},
+									"response": []
+								},
+								{
+									"name": "Resend Activation OTP",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{$access_token}}"
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/auth/resend-activation-code",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"auth",
+												"resend-activation-code"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"warning": "Value contains invalid newline characters.",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{$access_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{$domain}}/api/v1/user/auth/logout",
+							"host": [
+								"{{$domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Application info & Settings",
+			"item": [
+				{
+					"name": "Contact Us",
+					"item": [
+						{
+							"name": "Send Contact Us Message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "{{$lang}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "mark",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "Rady",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "mark@intcore.net",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "20-1118240000",
+											"type": "text"
+										},
+										{
+											"key": "body",
+											"value": "hello it's me",
+											"type": "text"
+										},
+										{
+											"key": "app_type",
+											"value": "",
+											"description": "@depricated\ndefault : 1\nuser app : 1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "subject",
+											"value": "subject",
+											"description": "send this or subject_id",
+											"type": "text"
+										},
+										{
+											"key": "subject_id",
+											"value": "07a05a45-483f-42b7-8e0f-b95fdb6b97a6",
+											"description": "use get subjects api",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/app/contact-us/save",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"app",
+										"contact-us",
+										"save"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success Response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "subject_id",
+													"value": "1",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "subject",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "first_name",
+													"value": "Mark",
+													"type": "text"
+												},
+												{
+													"key": "last_name",
+													"value": "Rady",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "mark@intcore.net",
+													"type": "text"
+												},
+												{
+													"key": "phone",
+													"value": "20-1118240000",
+													"type": "text"
+												},
+												{
+													"key": "body",
+													"value": "hello it's me",
+													"type": "text"
+												},
+												{
+													"key": "app_type",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/contact-us/save",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"contact-us",
+												"save"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 02 Dec 2020 16:19:00 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "Xefc65e48cf818c46ebbc413e5964f25f"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"contact_us\": {\n            \"status\": 0,\n            \"last_name\": \"Rady\",\n            \"phone\": \"20-1118240000\",\n            \"subject_id\": null,\n            \"app_type\": 1,\n            \"first_name\": \"Mark\",\n            \"email\": \"mark@intcore.net\",\n            \"body\": \"hello it's me\",\n            \"id\": \"1ad2cb7c-82ec-4bab-892b-89b45cd99aca\",\n            \"updated_at\": \"2020-12-02T16:18:59.000000Z\",\n            \"created_at\": \"2020-12-02T16:18:59.000000Z\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Validation Error Response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/contact-us/save",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"contact-us",
+												"save"
+											]
+										}
+									},
+									"status": "Unprocessable Entity",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 02 Dec 2020 16:40:42 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "X4c7dbe8090e578c6c6951ad5b883f3c6"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"name\": \"first_name\",\n            \"message\": \"The first name field is required.\"\n        },\n        {\n            \"name\": \"email\",\n            \"message\": \"The email field is required.\"\n        },\n        {\n            \"name\": \"body\",\n            \"message\": \"The body field is required.\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Get subjects",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "{{$lang}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/app/contact-us/subjects",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"app",
+										"contact-us",
+										"subjects"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Settings & Configurations",
+					"item": [
+						{
+							"name": "Get Configurations",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{$domain}}/api/v1/configuration",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"configuration"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Force update api",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "{{$lang}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{$domain}}/api/v1/configuration/latest-version?platform=ios&app_type=1&version=0.0.2",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"configuration",
+										"latest-version"
+									],
+									"query": [
+										{
+											"key": "platform",
+											"value": "ios",
+											"description": "const ANDROID = 'android';\nconst IOS = 'ios';"
+										},
+										{
+											"key": "app_type",
+											"value": "1",
+											"description": "const USER_APP = 1;\nconst PROVIDER_APP = 2;"
+										},
+										{
+											"key": "version",
+											"value": "0.0.2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get About Us",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "{{$lang}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{$domain}}/api/v1/configuration/about-us",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"configuration",
+										"about-us"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/configuration/about-us",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"configuration",
+												"about-us"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 07 Dec 2020 09:25:55 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "Xbe6bfda64b3efac56c50f1da12da1e06"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"about_us_en\": \"<p>test11 23123123123</p>\",\n        \"about_us_ar\": \"<p>test</p>\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Privacy",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "{{$lang}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{$domain}}/api/v1/configuration/privacy",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"configuration",
+										"privacy"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Terms",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "{{$lang}}"
+									}
+								],
+								"url": {
+									"raw": "{{$domain}}/api/v1/configuration/terms",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"configuration",
+										"terms"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Contact Information",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/x-www-form-urlencoded",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{$domain}}/api/v1/configuration/contact-information",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"configuration",
+										"contact-information"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/x-www-form-urlencoded",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/configuration/contact-information",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"configuration",
+												"contact-information"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 07 Dec 2020 14:58:01 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "Xc78f3b211042962af3ba8f9f757852ae"
+										},
+										{
+											"key": "Upgrade",
+											"value": "h2,h2c"
+										},
+										{
+											"key": "Connection",
+											"value": "Upgrade, Keep-Alive"
+										},
+										{
+											"key": "Vary",
+											"value": "User-Agent"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "*"
+										},
+										{
+											"key": "Content-Length",
+											"value": "40"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5, max=100"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"contact_number\": \"+123456789\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Lookups",
+					"item": [
+						{
+							"name": "Cars",
+							"item": [
+								{
+									"name": "Get cars facilities",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "{{$lang}}"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/car/facilities",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"car",
+												"facilities"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Data example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"type": "text",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept-Language",
+														"type": "text",
+														"value": "{{$lang}}"
+													}
+												],
+												"url": {
+													"raw": "{{$domain}}/api/v1/car/facilities",
+													"host": [
+														"{{$domain}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"car",
+														"facilities"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Server",
+													"value": "nginx/1.19.4"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 02 Jan 2021 20:26:16 GMT"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "51"
+												},
+												{
+													"key": "phpdebugbar-id",
+													"value": "Xa2efa6a8f4a848c64a685c7725e92847"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"car_classes\": [\n            {\n                \"id\": \"1da2c71a-5da7-472e-8b70-3bc2f86a38d4\",\n                \"name\": \"A\",\n                \"image\": {\n                    \"id\": 4,\n                    \"path\": \"http://localhost:8080/storage/4/Df7I97jA4MhFytgSifrB6xxTkCHo7C8ZpREFmhJn.jpg\",\n                    \"path_thumbnail\": \"http://localhost:8080/storage/4/conversions/Df7I97jA4MhFytgSifrB6xxTkCHo7C8ZpREFmhJn-thumb.jpg\",\n                    \"mime_type\": \"image/jpeg\",\n                    \"custom_properties\": []\n                }\n            },\n            {\n                \"id\": \"2f881bce-d5f7-4b5c-b02b-e6f141594328\",\n                \"name\": \"B\",\n                \"image\": {\n                    \"id\": 2,\n                    \"path\": \"http://localhost:8080/storage/2/77yfaBxzn9nlbpae0mV99VsACXBPzG2kkXDr9mPx.png\",\n                    \"path_thumbnail\": \"http://localhost:8080/storage/2/conversions/77yfaBxzn9nlbpae0mV99VsACXBPzG2kkXDr9mPx-thumb.jpg\",\n                    \"mime_type\": \"image/png\",\n                    \"custom_properties\": []\n                }\n            },\n            {\n                \"id\": \"57fcb529-9df7-49f4-b989-c8e261314e5b\",\n                \"name\": \"C\",\n                \"image\": {\n                    \"id\": 5,\n                    \"path\": \"http://localhost:8080/storage/5/TU6kRx47LxrQVuserR0uUkZfNmjHXLaVSoZSxpHj.jpg\",\n                    \"path_thumbnail\": \"http://localhost:8080/storage/5/conversions/TU6kRx47LxrQVuserR0uUkZfNmjHXLaVSoZSxpHj-thumb.jpg\",\n                    \"mime_type\": \"image/jpeg\",\n                    \"custom_properties\": []\n                }\n            }\n        ],\n        \"fuel_types\": [\n            {\n                \"id\": \"8c727b85-b8b0-41f1-a9fb-9de5bfb4c710\",\n                \"name\": \"Petrol\"\n            },\n            {\n                \"id\": \"09c82338-266a-4b27-ad87-74e1107b2042\",\n                \"name\": \"test\"\n            }\n        ]\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Search for models",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "{{$lang}}"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/car/search?car_class_id&fuel_type_id&year",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"car",
+												"search"
+											],
+											"query": [
+												{
+													"key": "car_class_id",
+													"value": null
+												},
+												{
+													"key": "fuel_type_id",
+													"value": null
+												},
+												{
+													"key": "year",
+													"value": null,
+													"description": "years as number like 2020, 2021, 2010 so on"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Search for models",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"type": "text",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept-Language",
+														"type": "text",
+														"value": "{{$lang}}"
+													}
+												],
+												"url": {
+													"raw": "{{$domain}}/api/v1/car/search?car_class_id=1da2c71a-5da7-472e-8b70-3bc2f86a38d4&fuel_type_id=8c727b85-b8b0-41f1-a9fb-9de5bfb4c710&year=2020",
+													"host": [
+														"{{$domain}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"car",
+														"search"
+													],
+													"query": [
+														{
+															"key": "car_class_id",
+															"value": "1da2c71a-5da7-472e-8b70-3bc2f86a38d4"
+														},
+														{
+															"key": "fuel_type_id",
+															"value": "8c727b85-b8b0-41f1-a9fb-9de5bfb4c710"
+														},
+														{
+															"key": "year",
+															"value": "2020",
+															"description": "years as number like 2020, 2021, 2010 so on"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Server",
+													"value": "nginx/1.19.4"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Sun, 03 Jan 2021 13:33:31 GMT"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "phpdebugbar-id",
+													"value": "X63c2c3afede31ae7b8042e683558ad9a"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"cars\": [\n            {\n                \"id\": \"1\",\n                \"name\": \"e600\",\n                \"description\": \"test\"\n            }\n        ]\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "get car by vin prefix",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "{{$lang}}"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/car/facilities",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"car",
+												"facilities"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Data example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"type": "text",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept-Language",
+														"type": "text",
+														"value": "{{$lang}}"
+													}
+												],
+												"url": {
+													"raw": "{{$domain}}/api/v1/car/facilities",
+													"host": [
+														"{{$domain}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"car",
+														"facilities"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Server",
+													"value": "nginx/1.19.4"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 02 Jan 2021 20:26:16 GMT"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "51"
+												},
+												{
+													"key": "phpdebugbar-id",
+													"value": "Xa2efa6a8f4a848c64a685c7725e92847"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"car_classes\": [\n            {\n                \"id\": \"1da2c71a-5da7-472e-8b70-3bc2f86a38d4\",\n                \"name\": \"A\",\n                \"image\": {\n                    \"id\": 4,\n                    \"path\": \"http://localhost:8080/storage/4/Df7I97jA4MhFytgSifrB6xxTkCHo7C8ZpREFmhJn.jpg\",\n                    \"path_thumbnail\": \"http://localhost:8080/storage/4/conversions/Df7I97jA4MhFytgSifrB6xxTkCHo7C8ZpREFmhJn-thumb.jpg\",\n                    \"mime_type\": \"image/jpeg\",\n                    \"custom_properties\": []\n                }\n            },\n            {\n                \"id\": \"2f881bce-d5f7-4b5c-b02b-e6f141594328\",\n                \"name\": \"B\",\n                \"image\": {\n                    \"id\": 2,\n                    \"path\": \"http://localhost:8080/storage/2/77yfaBxzn9nlbpae0mV99VsACXBPzG2kkXDr9mPx.png\",\n                    \"path_thumbnail\": \"http://localhost:8080/storage/2/conversions/77yfaBxzn9nlbpae0mV99VsACXBPzG2kkXDr9mPx-thumb.jpg\",\n                    \"mime_type\": \"image/png\",\n                    \"custom_properties\": []\n                }\n            },\n            {\n                \"id\": \"57fcb529-9df7-49f4-b989-c8e261314e5b\",\n                \"name\": \"C\",\n                \"image\": {\n                    \"id\": 5,\n                    \"path\": \"http://localhost:8080/storage/5/TU6kRx47LxrQVuserR0uUkZfNmjHXLaVSoZSxpHj.jpg\",\n                    \"path_thumbnail\": \"http://localhost:8080/storage/5/conversions/TU6kRx47LxrQVuserR0uUkZfNmjHXLaVSoZSxpHj-thumb.jpg\",\n                    \"mime_type\": \"image/jpeg\",\n                    \"custom_properties\": []\n                }\n            }\n        ],\n        \"fuel_types\": [\n            {\n                \"id\": \"8c727b85-b8b0-41f1-a9fb-9de5bfb4c710\",\n                \"name\": \"Petrol\"\n            },\n            {\n                \"id\": \"09c82338-266a-4b27-ad87-74e1107b2042\",\n                \"name\": \"test\"\n            }\n        ]\n    }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Geography",
+							"item": [
+								{
+									"name": "Get Countries",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "{{$lang}}"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/geography/countries",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"geography",
+												"countries"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Get Countries",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"type": "text",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept-Language",
+														"type": "text",
+														"value": "{{$lang}}"
+													}
+												],
+												"url": {
+													"raw": "{{$domain}}/api/v1/geography/countries",
+													"host": [
+														"{{$domain}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"geography",
+														"countries"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Server",
+													"value": "nginx/1.19.6"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Transfer-Encoding",
+													"value": "chunked"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/7.4.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Sun, 03 Jan 2021 13:31:53 GMT"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "58"
+												},
+												{
+													"key": "phpdebugbar-id",
+													"value": "Xe19e25354367d02510aa5a493ac9261d"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"id\": \"340f136f-fa4e-4cfa-a08b-3f54a4ca2086\",\n            \"name\": \"EGYPT\",\n            \"currency\": \"EGP\",\n            \"cities\": [\n                {\n                    \"id\": \"bbb4c96a-b2a6-4fbc-995b-5f6a9c0aae9e\",\n                    \"name\": \"Cairo\",\n                    \"areas\": [\n                        {\n                            \"id\": \"e0b385b6-d8aa-44bd-858c-288acfd1995f\",\n                            \"name\": \"Maadi\"\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Faq",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "{{$lang}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{$domain}}/api/v1/user/app/faq",
+							"host": [
+								"{{$domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"app",
+								"faq"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Application",
+			"item": [
+				{
+					"name": "Favourites",
+					"item": [
+						{
+							"name": "Get Favourotes",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "en"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{$access_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/app/favourite?type=user&page=1",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"app",
+										"favourite"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "user",
+											"description": "const USER = 'user';"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success with data",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{$access_token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/favourite?type=user",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"favourite"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "user",
+													"description": "const USER = 'user';"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:32:25 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "54"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "X86e432bf2911b14bc181d5e8cc06c8da"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": \"7685ca64-b7fa-44ed-9834-fe8086322dfe\",\n                \"first_name\": \"Mark\",\n                \"last_name\": \"Rady\",\n                \"email\": \"mark@intcore.net13\",\n                \"phone\": \"20-111824000013\",\n                \"activation\": \"123456\",\n                \"type\": 1,\n                \"password_reset_code\": null,\n                \"language\": \"en\",\n                \"gender\": null,\n                \"birth_date\": null,\n                \"created_at\": \"2020-12-07T14:26:52.000000Z\",\n                \"updated_at\": \"2020-12-07T14:26:52.000000Z\",\n                \"country_id\": null,\n                \"city_id\": null,\n                \"full_name\": \"Mark Rady\",\n                \"profile_picture\": null,\n                \"media\": []\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8080/api/v1/user/app/favourite?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8080/api/v1/user/app/favourite?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8080/api/v1/user/app/favourite?page=1\",\n                \"label\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8080/api/v1/user/app/favourite\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+								},
+								{
+									"name": "Empty List",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{$access_token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/favourite?type=user",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"favourite"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "user",
+													"description": "const USER = 'user';"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:33:24 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "56"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "X5e0b6e64bcae8082815f415c5e2f73c2"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [],\n        \"first_page_url\": \"http://localhost:8080/api/v1/user/app/favourite?page=1\",\n        \"from\": null,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8080/api/v1/user/app/favourite?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8080/api/v1/user/app/favourite?page=1\",\n                \"label\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8080/api/v1/user/app/favourite\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": null,\n        \"total\": 0\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Add to my favourite",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "en"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{$access_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "7685ca64-b7fa-44ed-9834-fe8086322dfe",
+											"description": "item id",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "user",
+											"description": "const USER = 'user';",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/app/favourite",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"app",
+										"favourite"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{$access_token}}"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "id",
+													"value": "7685ca64-b7fa-44ed-9834-fe8086322dfe",
+													"description": "item id",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "user",
+													"description": "const USER = 'user';",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/favourite",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"favourite"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:33:39 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "55"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "X3417dd9c6c10b6ac1a61324aadff85a0"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
+								},
+								{
+									"name": "Validation Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{$access_token}}"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "id",
+													"value": "7685ca64-b7fa-44ed-9834-fe8086322dfe",
+													"description": "item id",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "type",
+													"value": "user",
+													"description": "const USER = 'user';",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/favourite",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"favourite"
+											]
+										}
+									},
+									"status": "Unprocessable Entity",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:33:54 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "53"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "X5406f29b4461f05636cdb621bf33dc37"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"name\": \"id\",\n            \"message\": \"The id field is required.\"\n        },\n        {\n            \"name\": \"type\",\n            \"message\": \"The type field is required.\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete from favourite",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "en"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{$access_token}}"
+									}
+								],
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/app/favourite?id=7685ca64-b7fa-44ed-9834-fe8086322dfe&type=user",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"app",
+										"favourite"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "7685ca64-b7fa-44ed-9834-fe8086322dfe",
+											"description": "item id"
+										},
+										{
+											"key": "type",
+											"value": "user",
+											"description": "const USER = 'user';"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{$access_token}}"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/favourite?id=2a99b9f0-7980-4186-aff5-8d8b188446ad&type=user",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"favourite"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "2a99b9f0-7980-4186-aff5-8d8b188446ad",
+													"description": "item id"
+												},
+												{
+													"key": "type",
+													"value": "user",
+													"description": "const USER = 'user';"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:33:00 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "Xebbad26cd71c8fc41afab816a776ddb4"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Rating",
+					"item": [
+						{
+							"name": "Get Rates",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "en"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{$access_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/app/rate?type=user&page=1",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"app",
+										"rate"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "user",
+											"description": "const USER = 'user';"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Empty List",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{$access_token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/rate?type=user",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"rate"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "user",
+													"description": "const USER = 'user';"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:30:15 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "X12481ec51ae74ad3f20da276eb1f0132"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [],\n        \"first_page_url\": \"http://localhost:8080/api/v1/user/app/rate?page=1\",\n        \"from\": null,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8080/api/v1/user/app/rate?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8080/api/v1/user/app/rate?page=1\",\n                \"label\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8080/api/v1/user/app/rate\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": null,\n        \"total\": 0\n    }\n}"
+								},
+								{
+									"name": "Success with data",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{$access_token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/rate?type=user",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"rate"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "user",
+													"description": "const USER = 'user';"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:31:11 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "55"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "X5028da4138e01ca8f87b020cdd1da5b6"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": \"7685ca64-b7fa-44ed-9834-fe8086322dfe\",\n                \"first_name\": \"Mark\",\n                \"last_name\": \"Rady\",\n                \"email\": \"mark@intcore.net13\",\n                \"phone\": \"20-111824000013\",\n                \"activation\": \"123456\",\n                \"type\": 1,\n                \"password_reset_code\": null,\n                \"language\": \"en\",\n                \"gender\": null,\n                \"birth_date\": null,\n                \"created_at\": \"2020-12-07T14:26:52.000000Z\",\n                \"updated_at\": \"2020-12-07T14:26:52.000000Z\",\n                \"country_id\": null,\n                \"city_id\": null,\n                \"full_name\": \"Mark Rady\",\n                \"profile_picture\": null,\n                \"media\": []\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8080/api/v1/user/app/rate?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8080/api/v1/user/app/rate?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8080/api/v1/user/app/rate?page=1\",\n                \"label\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8080/api/v1/user/app/rate\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Pending Rates",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "en"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{$access_token}}"
+									}
+								],
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/app/rate/pending",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"app",
+										"rate",
+										"pending"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Empty List",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{$access_token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/rate?type=user",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"rate"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "user",
+													"description": "const USER = 'user';"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:30:15 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "X12481ec51ae74ad3f20da276eb1f0132"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [],\n        \"first_page_url\": \"http://localhost:8080/api/v1/user/app/rate?page=1\",\n        \"from\": null,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8080/api/v1/user/app/rate?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8080/api/v1/user/app/rate?page=1\",\n                \"label\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8080/api/v1/user/app/rate\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": null,\n        \"total\": 0\n    }\n}"
+								},
+								{
+									"name": "Success with data",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{$access_token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/rate?type=user",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"rate"
+											],
+											"query": [
+												{
+													"key": "type",
+													"value": "user",
+													"description": "const USER = 'user';"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:31:11 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "55"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "X5028da4138e01ca8f87b020cdd1da5b6"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": \"7685ca64-b7fa-44ed-9834-fe8086322dfe\",\n                \"first_name\": \"Mark\",\n                \"last_name\": \"Rady\",\n                \"email\": \"mark@intcore.net13\",\n                \"phone\": \"20-111824000013\",\n                \"activation\": \"123456\",\n                \"type\": 1,\n                \"password_reset_code\": null,\n                \"language\": \"en\",\n                \"gender\": null,\n                \"birth_date\": null,\n                \"created_at\": \"2020-12-07T14:26:52.000000Z\",\n                \"updated_at\": \"2020-12-07T14:26:52.000000Z\",\n                \"country_id\": null,\n                \"city_id\": null,\n                \"full_name\": \"Mark Rady\",\n                \"profile_picture\": null,\n                \"media\": []\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8080/api/v1/user/app/rate?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8080/api/v1/user/app/rate?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8080/api/v1/user/app/rate?page=1\",\n                \"label\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8080/api/v1/user/app/rate\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Rate item",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "en"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{$access_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "7685ca64-b7fa-44ed-9834-fe8086322dfe",
+											"description": "item id",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "user",
+											"description": "const USER = 'user';",
+											"type": "text"
+										},
+										{
+											"key": "rate",
+											"value": "4.6",
+											"description": "rate out of 5",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/app/rate",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"app",
+										"rate"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{$access_token}}"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "id",
+													"value": "7685ca64-b7fa-44ed-9834-fe8086322dfe",
+													"description": "item id",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "user",
+													"description": "const USER = 'user';",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/rate",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"rate"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:27:50 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "X044a6192f017daf3703c1503fdb83652"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
+								},
+								{
+									"name": "Validation Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{$access_token}}"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "id",
+													"value": "7685ca64-b7fa-44ed-9834-fe8086322dfe",
+													"description": "item id",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "type",
+													"value": "user",
+													"description": "const USER = 'user';",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/rate",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"rate"
+											]
+										}
+									},
+									"status": "Unprocessable Entity",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:31:35 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "Xe85f4273cf3067e1b9aaa82b8dd79610"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"name\": \"id\",\n            \"message\": \"The id field is required.\"\n        },\n        {\n            \"name\": \"type\",\n            \"message\": \"The type field is required.\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Cancel Rate",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "en"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{$access_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "7685ca64-b7fa-44ed-9834-fe8086322dfe",
+											"description": "item id",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "user",
+											"description": "const USER = 'user';",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/app/rate",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"app",
+										"rate"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Validation Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{$access_token}}"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "id",
+													"value": "7685ca64-b7fa-44ed-9834-fe8086322dfe",
+													"description": "item id",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "type",
+													"value": "user",
+													"description": "const USER = 'user';",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/rate",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"rate"
+											]
+										}
+									},
+									"status": "Unprocessable Entity",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:31:35 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "Xe85f4273cf3067e1b9aaa82b8dd79610"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"name\": \"id\",\n            \"message\": \"The id field is required.\"\n        },\n        {\n            \"name\": \"type\",\n            \"message\": \"The type field is required.\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{$access_token}}"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "id",
+													"value": "7685ca64-b7fa-44ed-9834-fe8086322dfe",
+													"description": "item id",
+													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "user",
+													"description": "const USER = 'user';",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/rate",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"rate"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:27:50 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "X044a6192f017daf3703c1503fdb83652"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Rating",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"type": "text",
+										"value": "en"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{$access_token}}"
+									}
+								],
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/app/rate?id=7685ca64-b7fa-44ed-9834-fe8086322dfe&type=user",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"app",
+										"rate"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "7685ca64-b7fa-44ed-9834-fe8086322dfe",
+											"description": "item id"
+										},
+										{
+											"key": "type",
+											"value": "user",
+											"description": "const USER = 'user';"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{$access_token}}"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/rate?id=7685ca64-b7fa-44ed-9834-fe8086322dfe&type=user",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"rate"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "7685ca64-b7fa-44ed-9834-fe8086322dfe",
+													"description": "item id"
+												},
+												{
+													"key": "type",
+													"value": "user",
+													"description": "const USER = 'user';"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:30:12 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "X2ef89a7780710115f6dea7f460687663"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
+								},
+								{
+									"name": "validation error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept-Language",
+												"type": "text",
+												"value": "en"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "Bearer {{$access_token}}"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/user/app/rate",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"app",
+												"rate"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "7685ca64-b7fa-44ed-9834-fe8086322dfe",
+													"description": "item id",
+													"disabled": true
+												},
+												{
+													"key": "type",
+													"value": "user",
+													"description": "const USER = 'user';",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:32:11 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "56"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "X8436f12059ea4cf0a6db9f8ef2b7b8e9"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"name\": \"id\",\n            \"message\": \"The id field is required.\"\n        },\n        {\n            \"name\": \"type\",\n            \"message\": \"The type field is required.\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Notification",
+					"item": [
+						{
+							"name": "Get my notifications",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{$access_token}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "{{$lang}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{$domain}}/api/v1/app/notifications?page=1",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"app",
+										"notifications"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Empty Data",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{$access_token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{$domain}}/api/v1/app/notifications",
+											"host": [
+												"{{$domain}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"app",
+												"notifications"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.4"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Dec 2020 13:50:07 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "phpdebugbar-id",
+											"value": "Xf8b28ab8bca4d4f7209a2e056cbec2f3"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"notifications\": [],\n        \"pagination\": {\n            \"total\": 0,\n            \"count\": 0,\n            \"per_page\": 15,\n            \"current_page\": 1,\n            \"total_pages\": 1\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Mark notifications as read",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{$access_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{$domain}}/api/v1/app/notifications",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"app",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patch user Device_id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{$access_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{$domain}}/api/v1/user/profile/device-info?device_id=assdfsdf1sdf1sd2f1sd32f1sd32f1s32df1sd2f1s3f1sd2f1sd3f1sd3f13sd2v1xc23v132cx1bv23xc1b32x1cbc23e2e1d1212",
+									"host": [
+										"{{$domain}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"profile",
+										"device-info"
+									],
+									"query": [
+										{
+											"key": "device_id",
+											"value": "assdfsdf1sdf1sd2f1sd32f1sd32f1s32df1sd2f1s3f1sd2f1sd3f1sd3f13sd2v1xc23v132cx1bv23xc1b32x1cbc23e2e1d1212"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Get Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer   {{$access_token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "device_id",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{$domain}}/api/payfort/publish/tokens",
+							"host": [
+								"{{$domain}}"
+							],
+							"path": [
+								"api",
+								"payfort",
+								"publish",
+								"tokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Processed Payment [Payfort Endpoint]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"type": "text",
+								"value": "en"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer   {{$access_token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "merchant_reference",
+									"value": "df15fd72-673e-4b0d-bced-d2c8d8875810"
+								},
+								{
+									"key": "fort_id",
+									"value": "11111"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{$domain}}/api/payfort/check/transactions/processed",
+							"host": [
+								"{{$domain}}"
+							],
+							"path": [
+								"api",
+								"payfort",
+								"check",
+								"transactions",
+								"processed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Uploads",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/markrady/Desktop/test/cover_medium.jpg"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{$domain}}/api/v1/uploads/create",
+					"host": [
+						"{{$domain}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"uploads",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/markrady/Desktop/test/cover_medium.jpg"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{$domain}}/api/v1/uploads/create",
+							"host": [
+								"{{$domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"uploads",
+								"create"
+							],
+							"query": [
+								{
+									"key": "path",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Dec 2020 14:29:41 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "phpdebugbar-id",
+							"value": "Xf6260dbf75d67ca8cc0470f08edc15fc"
+						},
+						{
+							"key": "Upgrade",
+							"value": "h2,h2c"
+						},
+						{
+							"key": "Connection",
+							"value": "Upgrade, Keep-Alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding,User-Agent"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "162"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": \"0b727953-a6be-4e1d-91ec-9572f36e5fad\",\n        \"path\": \"/storage/uploads/55hlT1munPVTboIiE4pAiIqTL3SzElDmYeyEZfBJ.jpg\",\n        \"mime_type\": \"image/jpeg\"\n    }\n}"
+				},
+				{
+					"name": "error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/markrady/Desktop/test/cover_medium.jpg",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{$domain}}/api/v1/uploads/create",
+							"host": [
+								"{{$domain}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"uploads",
+								"create"
+							],
+							"query": [
+								{
+									"key": "path",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Dec 2020 16:35:31 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "phpdebugbar-id",
+							"value": "Xb366ecc2bdf671091f19f9f706fb6aa5"
+						},
+						{
+							"key": "Upgrade",
+							"value": "h2,h2c"
+						},
+						{
+							"key": "Connection",
+							"value": "Upgrade, Keep-Alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding,User-Agent"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "100"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"The given data was invalid.\",\n    \"errors\": {\n        \"file\": [\n            \"The file field is required.\"\n        ]\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
